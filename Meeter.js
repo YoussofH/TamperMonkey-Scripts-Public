@@ -5,6 +5,8 @@
 // @description  try to take over the world!
 // @author       You
 // @match        https://classroom.google.com/u/0/*
+// @match        https://classroom.google.com/h
+// @match        https://classroom.google.com/c/*
 // @icon         https://www.google.com/s2/favicons?domain=google.com
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
 // @grant        none
