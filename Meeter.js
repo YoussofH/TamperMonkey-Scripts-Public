@@ -58,4 +58,5 @@ $(document).keypress(function(e) {
         if(roomLink){//check if false 0 "" NaN null undefined
         window.location.href = "https://classroom.google.com"+roomLink;}
     }
+    //testing Tampermonkey auto update using raw method by github
 });
