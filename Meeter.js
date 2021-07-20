@@ -38,9 +38,6 @@ $(document).keypress(function(e) {
         if(meet){//check if false 0 "" NaN null undefined
             window.location.href = meet;}
     }
-    if(code == 99) {//C keycode//open classwork tab
-        window.location.href = window.location.href+"/t/all";
-    }
     if(code == 104){//H keycode stands for home
         window.location.href = 'https://classroom.google.com/u/0/h';
     }
@@ -58,5 +55,4 @@ $(document).keypress(function(e) {
         if(roomLink){//check if false 0 "" NaN null undefined
         window.location.href = "https://classroom.google.com"+roomLink;}
     }
-    //testing Tampermonkey auto update using raw method by github
 });
