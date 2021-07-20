@@ -1,0 +1,41 @@
+// ==UserScript==
+// @name         Github Mod
+// @namespace    http://tampermonkey.net/
+// @version      0.5
+// @description  try to take over the world!
+// @author       You
+// @match        https://github.com/*
+// @icon         https://www.google.com/s2/favicons?domain=github.com
+// @require      https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+// @grant        none
+// ==/UserScript==
+
+/*globals $*/
+
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key === 'h') {
+        var link = window.location.href;
+        // https://github.com/user/repo/README.md -----> https://github.com/user/repo/
+        var i = getPosition(link, '/', 5)//crop by 5th back-slash to cut the link
+        link = link.substring(0, i+1);
+        window.location.href = link;
+    }
+    if(event.ctrlKey){
+        var links = $("a.js-navigation-open.Link--primary[href]").toArray();
+        var keyNum = parseInt(event.key);
+        var delta = Math.min(Math.max(keyNum, 1), links.length);
+        console.log(delta);
+
+        if(delta){
+            //manipulate through files by typing numbers
+            var fileLink = links[delta-1];//correct array index
+            if(fileLink){//check if false 0 "" NaN null undefined
+                window.location.href = fileLink;
+            }
+        }
+    }
+});
+
+function getPosition(string, subString, index) {
+  return string.split(subString, index).join(subString).length;
+}
